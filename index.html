@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>تحميل تطبيق remo TV</title>
+    <title>تحميل تطبيق Remo TV</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap');
         
@@ -13,6 +13,7 @@
             --dark-color: #2E7D32;
             --light-color: #F1F8E9;
             --text-color: #333;
+            --telegram-color: #0088cc;
         }
         
         * {
@@ -50,23 +51,21 @@
             z-index: 1;
         }
         
-      
-    .logo {
-        width: 180px;
-        height: 180px;
-        margin: 0 auto 40px; /* تم تغيير هذه القيمة من 30px إلى 40px */
-        border-radius: 50%;
-        background-color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        border: 0px solid var(--secondary-color);
-        overflow: hidden;
-        animation: float 3s ease-in-out infinite;
-        transition: all 0.3s ease;
-    }
-    
+        .logo {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 40px;
+            border-radius: 50%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 0px solid var(--secondary-color);
+            overflow: hidden;
+            animation: float 3s ease-in-out infinite;
+            transition: all 0.3s ease;
+        }
         
         .logo:hover {
             transform: scale(1.05);
@@ -89,18 +88,34 @@
         
         p {
             font-size: 1.1rem;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
             color: #555;
             line-height: 1.6;
+        }
+        
+        .requirements {
+            background-color: rgba(76, 175, 80, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 400px;
+            border-right: 4px solid var(--primary-color);
+        }
+        
+        .requirements p {
+            margin-bottom: 0;
+            font-size: 0.95rem;
+            color: var(--dark-color);
+            font-weight: 700;
         }
         
         .buttons {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 15px;
             width: 100%;
             max-width: 400px;
-            margin: 0 auto;
+            margin: 20px auto;
         }
         
         .btn {
@@ -138,9 +153,21 @@
             background: linear-gradient(45deg, var(--secondary-color), #FFA000);
         }
         
+        .btn-telegram {
+            background: linear-gradient(45deg, var(--telegram-color), #005f8c);
+            margin-top: 30px;
+        }
+        
         .btn i {
             margin-left: 10px;
             font-size: 1.4rem;
+        }
+        
+        .version {
+            font-size: 0.8rem;
+            opacity: 0.8;
+            display: block;
+            margin-top: 5px;
         }
         
         .ripple {
@@ -183,21 +210,26 @@
             .logo {
                 width: 150px;
                 height: 150px;
-                margin-bottom: 20px;
+                margin-bottom: 25px;
             }
             
             h1 {
                 font-size: 2rem;
+                
             }
             
             p {
                 font-size: 1rem;
-                margin-bottom: 30px;
+                margin-bottom: 15px;
             }
             
             .btn {
                 padding: 12px 20px;
                 font-size: 1.1rem;
+            }
+            
+            .requirements {
+                padding: 12px;
             }
         }
         
@@ -205,6 +237,7 @@
             .logo {
                 width: 120px;
                 height: 120px;
+                margin-bottom: 20px;
             }
             
             h1 {
@@ -212,7 +245,11 @@
             }
             
             .buttons {
-                gap: 15px;
+                gap: 12px;
+            }
+            
+            .btn-telegram {
+                margin-top: 20px;
             }
         }
     </style>
@@ -223,21 +260,33 @@
     
     <div class="container">
         <div class="logo">
-            <img src="https://up6.cc/2025/07/175240890301591.png" alt="remo TV Logo">
+            <img src="https://up6.cc/2025/07/175240890301591.png" alt="Remo TV Logo">
         </div>
         
-        <h1>remo TV</h1>
+        <h1>Remo TV</h1>
         <p>تطبيق البث التلفزيوني المتميز للهواتف والشاشات الذكية</p>
         
+        <div class="requirements">
+            <p>متطلبات التشغيل: أندرويد 8 أو أعلى</p>
+        </div>
+        
         <div class="buttons">
-            <a href="#" class="btn btn-phone" id="phoneBtn">
-                remo للهواتف
+            <a href="https://github.com/remoDownload/remoDownload.github.io/raw/refs/heads/main/remo%20v4.1.apk" class="btn btn-phone" id="phoneBtn">
+                تحميل للهواتف  ٖ
                 <i class="fas fa-mobile-alt"></i>
+                <span class="version">الإصدار 4.1</span>
             </a>
             
-            <a href="#" class="btn btn-tv" id="tvBtn">
-                remo TV للشاشات
+            <a href="https://github.com/remoDownload/remoDownload.github.io/raw/refs/heads/main/remo%20TV%20v4.1.apk" class="btn btn-tv" id="tvBtn">
+                كود الداونلودر 5470851       ٖ
                 <i class="fas fa-tv"></i>
+                <span class="version">الإصدار 4.1</span>
+            </a>
+            
+            <a href="https://t.me/remotvv" class="btn btn-telegram" id="telegramBtn">
+                انضم لقناتنا على تلغرام ٖ
+                <i class="fab fa-telegram">
+                </i>
             </a>
         </div>
     </div>
@@ -247,8 +296,6 @@
         const buttons = document.querySelectorAll('.btn');
         buttons.forEach(button => {
             button.addEventListener('click', function(e) {
-                e.preventDefault();
-                
                 const x = e.clientX - e.target.getBoundingClientRect().left;
                 const y = e.clientY - e.target.getBoundingClientRect().top;
                 
@@ -262,13 +309,6 @@
                 setTimeout(() => {
                     ripple.remove();
                 }, 600);
-                
-                // يمكنك إضافة الروابط هنا لاحقاً
-                if(this.id === 'phoneBtn') {
-                    // window.location.href = "https://github.com/remoDownload/remoDownload.github.io/raw/refs/heads/main/remo%20v4.1.apk";
-                } else if(this.id === 'tvBtn') {
-                    // window.location.href = "https://github.com/remoDownload/remoDownload.github.io/raw/refs/heads/main/remo%20TV%20v4.1.apk";
-                }
             });
         });
         
