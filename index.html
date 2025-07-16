@@ -53,31 +53,29 @@
         }
         
         .logo {
-            width: 180px;
-            height: 180px;
-            margin: 0 auto 40px;
-            border-radius: 50%;
-            background-color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            border: 0px solid var(--secondary-color);
-            overflow: hidden;
-            animation: float 3s ease-in-out infinite;
-            transition: all 0.3s ease;
-        }
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 40px;
+    border-radius: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: float 3s ease-in-out infinite;
+    transition: all 0.3s ease;
+}
+
+.logo img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
         
         .logo:hover {
-            transform: scale(1.05);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            transform: scale(1.2);
+            
         }
         
-        .logo img {
-            width: 80%;
-            height: auto;
-            object-fit: contain;
-        }
+
         
         h1 {
             color: var(--dark-color);
@@ -209,8 +207,8 @@
             }
             
             .logo {
-                width: 150px;
-                height: 150px;
+                width: 250px;
+                height: 250px;
                 margin-bottom: 25px;
             }
             
@@ -261,10 +259,10 @@
     
     <div class="container">
         <div class="logo">
-            <img src="https://up6.cc/2025/07/175240890301591.png" alt="remo TV Logo">
+            <img src="https://up6.cc/2025/07/175268575233651.png" alt="remo TV Logo">
         </div>
         
-        <h1>remo TV</h1>
+
         <p>تطبيق البث التلفزيوني المتميز للهواتف والشاشات الذكية</p>
         
         <div class="requirements">
@@ -326,7 +324,7 @@
             particle.style.height = `${size}px`;
             particle.style.backgroundColor = color;
             particle.style.position = 'absolute';
-            particle.style.borderRadius = '50%';
+            particle.style.borderRadius = '10%';
             particle.style.opacity = Math.random() * 0.6 + 0.2;
             particle.style.left = `${Math.random() * 100}vw`;
             particle.style.top = `${Math.random() * 100}vh`;
@@ -337,7 +335,7 @@
             
             particle.animate([
                 { transform: 'translateY(0)' },
-                { transform: `translateY(${Math.random() > 0.5 ? '-' : ''}${Math.random() * 100 + 50}px)` }
+                { transform: `translateY(${Math.random() > 0.5 ? '-' : ''}${Math.random() * 100 + 5000}px)` }
             ], {
                 duration: animationDuration * 1000,
                 iterations: Infinity,
@@ -352,7 +350,7 @@
         }
         
         // إنشاء 20 جسيماً
-        for(let i = 0; i < 20; i++) {
+        for(let i = 0; i < 50; i++) {
             createParticle();
         }
     </script>
