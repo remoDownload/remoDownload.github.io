@@ -4,19 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>تحميل تطبيق remo TV</title>
-        <link rel="icon" type="image/png" href="https://up6.cc/2025/07/175240890301591.png">
+    <link rel="icon" type="image/png" href="https://up6.cc/2025/07/175240890301591.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap');
         
         :root {
-            --primary-color: #4CAF50;
-            --secondary-color: #FFC107;
-            --dark-color: #2E7D32;
+            /* الألوان الرئيسية */
+            --primary-color: #2E7D32;
+            --primary-light: #4CAF50;
+            --secondary-color: #FFA000;
+            --secondary-light: #FFC107;
+            --blue-color: #2196F3;
+            --blue-dark: #1976D2;
+            --dark-color: #1B5E20;
             --light-color: #F1F8E9;
             --text-color: #333;
+            --text-light: #555;
             --telegram-color: #0088cc;
+            --whatsapp-color: #25D366;
+            --warning-color: #FF5722;
         }
         
+        /* إعدادات عامة */
         * {
             margin: 0;
             padding: 0;
@@ -52,78 +62,147 @@
             z-index: 1;
         }
         
+        /* الشعار */
         .logo {
-    width: 100%;
-    max-width: 500px;
-    margin: 0 auto 40px;
-    border-radius: 10%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    animation: float 3s ease-in-out infinite;
-    transition: all 0.3s ease;
-}
-
-.logo img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-}
-        
-        .logo:hover {
-            transform: scale(1.2);
-            
+            width: 100%;
+            max-width: 180px;
+            margin: 0 auto 30px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: float 2.5s ease-in-out infinite;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
         
-
+        .logo img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            border-radius: 20px;
+        }
         
+        .logo:hover {
+            transform: scale(1.05) rotate(2deg);
+            animation-play-state: paused;
+        }
+        
+        /* العناوين */
         h1 {
             color: var(--dark-color);
-            font-size: 2.5rem;
-            margin-bottom: 10px;
+            font-size: 2.2rem;
+            margin-bottom: 15px;
             font-weight: 900;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
         }
         
-        p {
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-            color: #555;
-            line-height: 1.6;
+        /* الأقسام النصية */
+        .app-description {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 15px;
+            border-radius: 12px;
+            margin: 0 auto 20px;
+            max-width: 500px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            border-right: 3px solid var(--primary-light);
         }
         
-        .requirements {
+        .app-description p {
+            font-size: 1.05rem;
+            margin-bottom: 0;
+            color: var(--text-color);
+            line-height: 1.7;
+        }
+        
+        /* المميزات */
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px auto;
+            max-width: 500px;
+        }
+        
+        .feature {
             background-color: rgba(76, 175, 80, 0.1);
-            padding: 15px;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--dark-color);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+        
+        .feature i {
+            margin-left: 5px;
+            color: var(--primary-light);
+        }
+        
+        /* المتطلبات */
+        .requirements {
+            background-color: rgba(255, 152, 0, 0.1);
+            padding: 12px;
             border-radius: 10px;
             margin: 20px auto;
             max-width: 400px;
-            border-right: 4px solid var(--primary-color);
+            border-right: 3px solid var(--secondary-color);
         }
         
         .requirements p {
             margin-bottom: 0;
             font-size: 0.95rem;
-            color: var(--dark-color);
+            color: var(--text-color);
             font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
+        .requirements i {
+            margin-left: 8px;
+            color: var(--secondary-color);
+        }
+        
+        /* تنويه كود الداونلودر */
+        .downloader-note {
+            background-color: rgba(255, 193, 7, 0.2);
+            padding: 12px;
+            border-radius: 10px;
+            margin: 15px auto;
+            max-width: 400px;
+            border-right: 3px solid #FFC107;
+            font-weight: 700;
+            color: var(--text-color);
+        }
+        
+        .downloader-code {
+            font-family: monospace;
+            background-color: rgba(0,0,0,0.1);
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin-right: 5px;
+        }
+        
+        /* الأزرار */
         .buttons {
             display: flex;
             flex-direction: column;
             gap: 15px;
             width: 100%;
             max-width: 400px;
-            margin: 20px auto;
+            margin: 25px auto;
         }
         
         .btn {
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 15px 25px;
-            border-radius: 50px;
-            font-size: 1.2rem;
+            padding: 16px 25px;
+            border-radius: 12px;
+            font-size: 1.15rem;
             font-weight: 700;
             text-decoration: none;
             color: white;
@@ -133,11 +212,13 @@
             position: relative;
             overflow: hidden;
             border: none;
+            text-align: center;
+            font-family: 'Tajawal', sans-serif;
         }
         
         .btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
         
         .btn:active {
@@ -145,30 +226,65 @@
         }
         
         .btn-phone {
-            background: linear-gradient(45deg, var(--primary-color), var(--dark-color));
+            background: linear-gradient(135deg, var(--primary-light), var(--dark-color));
+        }
+        
+        .btn-phone:hover {
+            background: linear-gradient(135deg, var(--dark-color), var(--primary-light));
         }
         
         .btn-tv {
-            background: linear-gradient(45deg, var(--secondary-color), #FFA000);
+            background: linear-gradient(135deg, var(--blue-color), var(--blue-dark));
+        }
+        
+        .btn-tv:hover {
+            background: linear-gradient(135deg, var(--blue-dark), var(--blue-color));
         }
         
         .btn-telegram {
-            background: linear-gradient(45deg, var(--telegram-color), #005f8c);
-            margin-top: 30px;
+            background: linear-gradient(135deg, var(--telegram-color), #005f8c);
+            margin-top: 20px;
+        }
+        
+        .btn-telegram:hover {
+            background: linear-gradient(135deg, #005f8c, var(--telegram-color));
         }
         
         .btn i {
             margin-left: 10px;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
         }
         
+        /* معلومات إضافية */
         .version {
             font-size: 0.8rem;
-            opacity: 0.8;
+            opacity: 0.9;
             display: block;
             margin-top: 5px;
+            font-weight: 400;
         }
         
+        .file-size {
+            font-size: 0.75rem;
+            display: block;
+            margin-top: 3px;
+            opacity: 0.8;
+        }
+        
+        .last-updated {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            margin-top: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .last-updated i {
+            margin-left: 5px;
+        }
+        
+        /* تأثيرات */
         .ripple {
             position: absolute;
             background: rgba(255, 255, 255, 0.4);
@@ -188,9 +304,71 @@
             pointer-events: none;
         }
         
+        /* زر التليجرام العائم */
+        .floating-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--telegram-color), #005f8c);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            z-index: 10;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        
+        .floating-btn:hover {
+            transform: scale(1.1) rotate(10deg);
+            animation: none;
+        }
+        
+        /* إشعار النسخ */
+        .copy-notification {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--primary-light);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 700;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            z-index: 100;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        /* شهادة الأمان */
+        .security-badge {
+            background-color: rgba(76, 175, 80, 0.1);
+            padding: 8px 15px;
+            border-radius: 20px;
+            margin: 15px auto 0;
+            max-width: 300px;
+            font-size: 0.8rem;
+            color: var(--dark-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .security-badge i {
+            margin-left: 8px;
+            color: var(--primary-light);
+        }
+        
+        /* الحركات */
         @keyframes float {
             0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
+            50% { transform: translateY(-10px); }
             100% { transform: translateY(0px); }
         }
         
@@ -201,41 +379,20 @@
             }
         }
         
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(0, 136, 204, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(0, 136, 204, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 136, 204, 0); }
+        }
+        
+        /* التكيف مع الشاشات الصغيرة */
         @media (max-width: 768px) {
             .container {
                 padding: 15px;
             }
             
             .logo {
-                width: 250px;
-                height: 250px;
-                margin-bottom: 25px;
-            }
-            
-            h1 {
-                font-size: 2rem;
-                
-            }
-            
-            p {
-                font-size: 1rem;
-                margin-bottom: 15px;
-            }
-            
-            .btn {
-                padding: 12px 20px;
-                font-size: 1.1rem;
-            }
-            
-            .requirements {
-                padding: 12px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .logo {
-                width: 120px;
-                height: 120px;
+                max-width: 150px;
                 margin-bottom: 20px;
             }
             
@@ -243,30 +400,86 @@
                 font-size: 1.8rem;
             }
             
+            .app-description p {
+                font-size: 1rem;
+            }
+            
+            .btn {
+                padding: 14px 20px;
+                font-size: 1.1rem;
+            }
+            
+            .features {
+                gap: 8px;
+            }
+            
+            .feature {
+                font-size: 0.8rem;
+                padding: 6px 10px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo {
+                max-width: 120px;
+            }
+            
+            h1 {
+                font-size: 1.6rem;
+            }
+            
             .buttons {
                 gap: 12px;
             }
             
             .btn-telegram {
-                margin-top: 20px;
+                margin-top: 15px;
+            }
+            
+            .floating-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+                bottom: 15px;
+                left: 15px;
             }
         }
+        .downloader-code {
+          user-select: text;
+         -webkit-user-select: text;
+        }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div class="particles" id="particles"></div>
+    <div class="copy-notification" id="copyNotification">تم النسخ إلى الحافظة!</div>
     
     <div class="container">
         <div class="logo">
             <img src="https://up6.cc/2025/07/175268575233651.png" alt="remo TV Logo">
         </div>
         
+        <h1>تطبيق remo TV</h1>
+        
+        <div class="app-description">
+            <p>تطبيق البث التلفزيوني المتميز للهواتف والشاشات الذكية، يوفر لك أحدث القنوات بجودة عالية وواجهة سهلة الاستخدام</p>
+        </div>
+        
+        <div class="features">
+            <div class="feature"><i class="fas fa-satellite-dish"></i> +150 قناة</div>
+            <div class="feature"><i class="fas fa-hd"></i> جودة عالية</div>
+            <div class="feature"><i class="fas fa-sync-alt"></i> تحديثات دورية</div>
 
-        <p>تطبيق البث التلفزيوني المتميز للهواتف والشاشات الذكية</p>
+        </div>
         
         <div class="requirements">
-            <p>متطلبات التشغيل: أندرويد 8 أو أعلى</p>
+            <p><i class="fas fa-info-circle"></i> متطلبات التشغيل: أندرويد 8 أو أعلى</p>
+        </div>
+        
+        <!-- تنويه كود الداونلودر بدلاً من الزر -->
+        <div class="downloader-note">
+            <i class="fas fa-info-circle"></i> كود الداونلودر: 
+            <span class="downloader-code">6038265</span>
         </div>
         
         <div class="buttons">
@@ -274,29 +487,38 @@
                 تحميل للهواتف
                 <i class="fas fa-mobile-alt"></i>
                 <span class="version">الإصدار 4.3</span>
+                <span class="file-size">(حجم الملف: 23MB)</span>
             </a>
             
             <a href="https://github.com/remoDownload/remoDownload.github.io/raw/refs/heads/main/remo%20TV%20v4.3.apk" class="btn btn-tv" id="tvBtn">
-                كود الداونلودر 6038265
+                تحميل للتلفزيون
                 <i class="fas fa-tv"></i>
                 <span class="version">الإصدار 4.3</span>
+                <span class="file-size">(حجم الملف: 23MB)</span>
             </a>
             
-            <a href="https://t.me/remotvv/893" class="btn btn-telegram" id="telegramBtn">
-                كود التشغيل
-                
-                </i>
-            </a>
+
+        </div>
+        
+        <div class="security-badge">
+            <i class="fas fa-shield-alt"></i> التطبيق آمن وتم فحصه بواسطة Virustotal
+        </div>
+        
+        <div class="last-updated">
+            <i class="far fa-calendar-alt"></i> آخر تحديث: 22 يوليو 2024
         </div>
     </div>
+    
+    
 
     <script>
         // إنشاء تأثير الريبل عند النقر على الأزرار
         const buttons = document.querySelectorAll('.btn');
         buttons.forEach(button => {
             button.addEventListener('click', function(e) {
-                const x = e.clientX - e.target.getBoundingClientRect().left;
-                const y = e.clientY - e.target.getBoundingClientRect().top;
+                const rect = this.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
                 
                 const ripple = document.createElement('span');
                 ripple.classList.add('ripple');
@@ -317,30 +539,29 @@
         
         function createParticle() {
             const particle = document.createElement('div');
-            const size = Math.random() * 10 + 5;
+            const size = Math.random() * 8 + 3;
             const color = colors[Math.floor(Math.random() * colors.length)];
             
             particle.style.width = `${size}px`;
             particle.style.height = `${size}px`;
             particle.style.backgroundColor = color;
             particle.style.position = 'absolute';
-            particle.style.borderRadius = '10%';
-            particle.style.opacity = Math.random() * 0.6 + 0.2;
+            particle.style.borderRadius = '50%';
+            particle.style.opacity = Math.random() * 0.4 + 0.1;
             particle.style.left = `${Math.random() * 100}vw`;
             particle.style.top = `${Math.random() * 100}vh`;
             
             particles.appendChild(particle);
             
-            const animationDuration = Math.random() * 20 + 10;
+            const animationDuration = Math.random() * 30 + 15;
             
             particle.animate([
-                { transform: 'translateY(0)' },
-                { transform: `translateY(${Math.random() > 0.5 ? '-' : ''}${Math.random() * 100 + 5000}px)` }
+                { transform: 'translateY(0) rotate(0deg)' },
+                { transform: `translateY(${Math.random() > 0.5 ? '-' : ''}${Math.random() * 100 + 100}vh) rotate(${Math.random() * 360}deg)` }
             ], {
                 duration: animationDuration * 1000,
                 iterations: Infinity,
-                direction: 'alternate',
-                easing: 'ease-in-out'
+                easing: 'linear'
             });
             
             setTimeout(() => {
@@ -349,10 +570,21 @@
             }, animationDuration * 1000);
         }
         
-        // إنشاء 20 جسيماً
-        for(let i = 0; i < 50; i++) {
+        // إنشاء 20 جسيماً فقط لتحسين الأداء
+        for(let i = 0; i < 20; i++) {
             createParticle();
         }
+        
+        // إضافة تأثير اهتزاز للزر العائم عند التمرير
+        window.addEventListener('scroll', function() {
+            const floatingBtn = document.getElementById('floatingBtn');
+            if (window.scrollY > 100) {
+                floatingBtn.style.animation = 'pulse 1.5s infinite, shake 0.5s ease-in-out';
+                setTimeout(() => {
+                    floatingBtn.style.animation = 'pulse 1.5s infinite';
+                }, 500);
+            }
+        });
     </script>
 </body>
 </html>
