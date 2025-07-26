@@ -1,0 +1,439 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap');
+
+:root {
+    /* الألوان الرئيسية */
+    --primary-color: #2E7D32;
+    --primary-light: #4CAF50;
+    --secondary-color: #FFA000;
+    --secondary-light: #FFC107;
+    --blue-color: #2196F3;
+    --blue-dark: #1976D2;
+    --dark-color: #1B5E20;
+    --light-color: #F1F8E9;
+    --text-color: #333;
+    --text-light: #555;
+    --telegram-color: #0088cc;
+    --whatsapp-color: #25D366;
+    --warning-color: #FF5722;
+}
+
+/* إعدادات عامة */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: 'Tajawal', sans-serif;
+    background-color: #f9f9f9;
+    color: var(--text-color);
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--light-color) 0%, #ffffff 100%);
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* الشعار */
+.logo {
+    width: 100%;
+    max-width: 180px;
+    margin: 0 auto 30px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: float 2.5s ease-in-out infinite;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.logo img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 20px;
+}
+
+.logo:hover {
+    transform: scale(1.05) rotate(2deg);
+    animation-play-state: paused;
+}
+
+/* العناوين */
+h1 {
+    color: var(--dark-color);
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    font-weight: 900;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* الأقسام النصية */
+.app-description {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    border-radius: 12px;
+    margin: 0 auto 20px;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    border-right: 3px solid var(--primary-light);
+}
+
+.app-description p {
+    font-size: 1.05rem;
+    margin-bottom: 0;
+    color: var(--text-color);
+    line-height: 1.7;
+}
+
+/* المميزات */
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px auto;
+    max-width: 500px;
+}
+
+.feature {
+    background-color: rgba(76, 175, 80, 0.1);
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: var(--dark-color);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
+
+.feature i {
+    margin-left: 5px;
+    color: var(--primary-light);
+}
+
+/* المتطلبات */
+.requirements {
+    background-color: rgba(255, 152, 0, 0.1);
+    padding: 12px;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 400px;
+    border-right: 3px solid var(--secondary-color);
+}
+
+.requirements p {
+    margin-bottom: 0;
+    font-size: 0.95rem;
+    color: var(--text-color);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.requirements i {
+    margin-left: 8px;
+    color: var(--secondary-color);
+}
+
+/* تنويه كود الداونلودر */
+.downloader-note {
+    background-color: rgba(255, 193, 7, 0.2);
+    padding: 12px;
+    border-radius: 10px;
+    margin: 15px auto;
+    max-width: 400px;
+    border-right: 3px solid #FFC107;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.downloader-code {
+    font-family: monospace;
+    background-color: rgba(0,0,0,0.1);
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-right: 5px;
+    user-select: text;
+    -webkit-user-select: text;
+}
+
+/* الأزرار */
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 400px;
+    margin: 25px auto;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 25px;
+    border-radius: 12px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    border: none;
+    text-align: center;
+    font-family: 'Tajawal', sans-serif;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+.btn-phone {
+    background: linear-gradient(135deg, var(--primary-light), var(--dark-color));
+}
+
+.btn-phone:hover {
+    background: linear-gradient(135deg, var(--dark-color), var(--primary-light));
+}
+
+.btn-tv {
+    background: linear-gradient(135deg, var(--blue-color), var(--blue-dark));
+}
+
+.btn-tv:hover {
+    background: linear-gradient(135deg, var(--blue-dark), var(--blue-color));
+}
+
+.btn-telegram {
+    background: linear-gradient(135deg, var(--telegram-color), #005f8c);
+    margin-top: 20px;
+}
+
+.btn-telegram:hover {
+    background: linear-gradient(135deg, #005f8c, var(--telegram-color));
+}
+
+.btn i {
+    margin-left: 10px;
+    font-size: 1.3rem;
+}
+
+/* معلومات إضافية */
+.version {
+    font-size: 0.8rem;
+    opacity: 0.9;
+    display: block;
+    margin-top: 5px;
+    font-weight: 400;
+}
+
+.file-size {
+    font-size: 0.75rem;
+    display: block;
+    margin-top: 3px;
+    opacity: 0.8;
+}
+
+.last-updated {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.last-updated i {
+    margin-left: 5px;
+}
+
+/* تأثيرات */
+.ripple {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    pointer-events: none;
+}
+
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* زر التليجرام العائم */
+.floating-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--telegram-color), #005f8c);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    z-index: 10;
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+.floating-btn:hover {
+    transform: scale(1.1) rotate(10deg);
+    animation: none;
+}
+
+/* إشعار النسخ */
+.copy-notification {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--primary-light);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: 700;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    z-index: 100;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* شهادة الأمان */
+.security-badge {
+    background-color: rgba(76, 175, 80, 0.1);
+    padding: 8px 15px;
+    border-radius: 20px;
+    margin: 15px auto 0;
+    max-width: 300px;
+    font-size: 0.8rem;
+    color: var(--dark-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.security-badge i {
+    margin-left: 8px;
+    color: var(--primary-light);
+}
+
+/* الحركات */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(0, 136, 204, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(0, 136, 204, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 136, 204, 0); }
+}
+
+/* التكيف مع الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .logo {
+        max-width: 150px;
+        margin-bottom: 20px;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    .app-description p {
+        font-size: 1rem;
+    }
+    
+    .btn {
+        padding: 14px 20px;
+        font-size: 1.1rem;
+    }
+    
+    .features {
+        gap: 8px;
+    }
+    
+    .feature {
+        font-size: 0.8rem;
+        padding: 6px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        max-width: 120px;
+    }
+    
+    h1 {
+        font-size: 1.6rem;
+    }
+    
+    .buttons {
+        gap: 12px;
+    }
+    
+    .btn-telegram {
+        margin-top: 15px;
+    }
+    
+    .floating-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+        bottom: 15px;
+        left: 15px;
+    }
+}
